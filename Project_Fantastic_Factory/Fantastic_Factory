@@ -1,0 +1,355 @@
+
+# Engineering Notebook
+## Individual Robot Project 01
+- Name: Sanduni
+- Project: 01
+- Start Date: 30-09-2026
+---
+---
+
+
+## Introduction
+This is the  Fantastic Factory Project. In this project, we  will design and implement a robotic system that solves a practical task. We will explore the task, plan a solution, simulate it, program real robots, and document our process,challenges and succeed story.
+
+## Goal
+By completing the project, I will:
+
+-Apply robots to solve a real problem.
+
+-Evaluate whether a robotic system is feasible for the task.
+
+-Compare the time required for manual work with the time required by your robotic solution.
+
+-Simulate a robotic system and program real robots.
+
+-Document the full project process in an engineering notebook.
+ 
+
+
+
+## 2026-09-30  Initial Idea 
+
+My development consist of several wooden strips which will place square shape one by one. Each square will be rotated by different angles. It will finally be visible as a spiral cubic shape.
+
+The concept will be pick/vacumme one  wooden strip from the place of storage, then move to assembly location, then rorate the gripper and then place/pressure wooden strip to build the shape of the structure. Then,robot will repeat the same procedure for next wooden strip.
+
+<p align="center">
+  <img src="1.png" alt="Robot simulation" width="500">
+</p>
+<p align="center">
+Figure 01 Initial idea sketched on the word document
+</p>
+
+## 2026-09-30  Initial Requirement
+
+I expect to develop the 10 layer of squares which will need 40  wooden strips. 
+
+
+<p align="center">
+  <img src="2.png" alt="Robot simulation" width="500">
+</p>
+<p align="center">
+Figure 02 Final output as plan view
+</p>
+
+
+
+## 2026-10-02  Required Component for Simulation
+
+Initially assumed that wooden strips dimensions
+
+Length =100 mm,   Width=15 mm,    Thickness = 2 mm
+
+I will use for the simulation:
+
+HAMK_Vacuum_gripper_MG400 (2).rdk as workstation. It consist of Dobot MG400, Suction Cup, Table 1400x800x800 mm HAMK logo,  white background and a Kapla wood block 0. 
+
+I added additional Kapla wood blocks for my development. 
+
+<p align="center">
+  <img src="3.png" alt="Robot simulation" width="500">
+</p>
+<p align="center">
+Figure 03 Required Component for simulation
+</p>
+
+
+## 2026-10-06  Available Material at the Laboratory
+
+I have found available wooden strips at the laboratory. The wooden strips dimensions as follows.
+
+Length =129 mm,   Width=15 mm,    Thickness = 2 mm
+
+I developed my initial idea manually.
+
+<p align="center">
+  <img src="4.jpeg" alt="Robot simulation" width="500">
+</p>
+<p align="center">
+Figure 04 Manual development, position and orientation step 1
+</p>
+
+
+<p align="center">
+  <img src="5.jpeg" alt="Robot simulation" width="500">
+</p>
+<p align="center">
+Figure 05 Manual development, position and orientation step 2
+</p>
+
+
+<p align="center">
+  <img src="6.jpeg" alt="Robot simulation" width="500">
+</p>
+<p align="center">
+Figure 06 Manual development, position and orientation step 3
+</p>
+
+
+<p align="center">
+  <img src="7.jpeg" alt="Robot simulation" width="500">
+</p>
+<p align="center">
+Figure 07 Manual development, position and orientation step 4
+</p>
+
+Then,I tested the gripping by vaccum. Unfortunately, available vaccum cup could not hold the wooden strip because of the vaccum loss. 
+
+### Challenges
+Available Vaccum cup diameter is greater than the width of the wooden strip. Therefore, it could not create a proper seal. Therefore, vaccum is not strong enough to hold the wooden strip.
+
+
+## 2026-10-06  Simulation Process with the Dobotstudio Pro
+
+Until recieving the suitable strips, I started the programming with Dobotstudiopro.
+
+### Setup the Dobot MG400 robotic arm 
+
+(i) Chose a robot.
+
+(ii) Locked the work station
+
+(iii) Connected to the power and network
+
+(iv) Set up the network and internet settings
+
+(v) Connected the Robot arm
+
+(vi) Tested the emergency stop button
+
+(vii) Moved to the initial pose
+
+
+<p align="center">
+  <img src="14.jpeg" alt="Robot simulation" width="500">
+</p>
+<p align="center">
+Figure 08 Initial Pose
+</p>
+
+
+Dimensions of the plastic strip will be as follows.
+
+Length =150 mm,   Width=28 mm,    Thickness = 3 mm
+
+First I defined eight pick positions at the strip stored location. It will move in linear paths. Gripper first will move horizontally (XY plane) to the position (eg: PB1) from the initial position and then move vertically (along -Z direction) from PB to P position.
+
+<p align="center">
+  <img src="8.jpeg" alt="Robot simulation" width="500">
+</p>
+<p align="center">
+Figure 09 Defined pick positions
+</p>
+
+<p align="center">
+  <img src="9.jpeg" alt="Robot simulation" width="500">
+</p>
+<p align="center">
+Figure 10 Defined pick positions
+</p>
+
+
+Then, defined the place position as randomly.
+
+Then, programmed the sequence of pick and place for 4 strips.
+
+<p align="center">
+  <img src="10.jpeg" alt="Robot simulation" width="500">
+</p>
+<p align="center">
+Figure 11 Sequence
+</p>
+
+
+<p align="center">
+  <img src="11.jpeg" alt="Robot simulation" width="500">
+</p>
+<p align="center">
+Figure 12 Sequence
+</p>
+
+
+<p align="center">
+  <img src="12.jpeg" alt="Robot simulation" width="500">
+</p>
+<p align="center">
+Figure 13 Sequence
+</p>
+
+
+<p align="center">
+  <img src="13.jpeg" alt="Robot simulation" width="500">
+</p>
+<p align="center">
+Figure 14 Sequence
+</p>
+
+
+## 2026-10-07  Define the place coordinates
+
+I defined the coordinates for place poses. First I Identified a position within the Robot's movement Range.
+Then,I calculated the coordinates for places  manually using the dimensions of the strip.
+
+<p align="center">
+  <img src="15.jpeg" alt="Robot simulation" width="500">
+</p>
+<p align="center">
+Figure 15 Calculated Coordinates for place poses
+</p>
+
+Then I updated the defined coordinates and added new coordinates for place positions.
+
+
+## 2026-10-07  Update Simulation 
+
+Then, I added sequence first for layer 1 and tested. It has successfully developed.
+
+
+### Main Consideration
+
+I used linear movements for approach and return movement when picking up and placing the strips. Because, linear movements move directly and smooth path to pick and place in defined positions. It may help to reduce conflicts with the other strips and other objects.
+
+<p align="center">
+  <img src="16.jpeg" alt="Robot simulation" width="500">
+</p>
+<p align="center">
+Figure 16 Strip at pick position
+</p>
+
+
+<p align="center">
+  <img src="17.jpeg" alt="Robot simulation" width="500">
+</p>
+<p align="center">
+Figure 17 Strip Movements
+</p>
+
+
+<p align="center">
+  <img src="18.jpeg" alt="Robot simulation" width="500">
+</p>
+<p align="center">
+Figure 18 Completion of first Layer
+</p>
+
+
+Then, I added coordinates related to the 2nd layer for pick and place.
+And updated the sequence for 2nd layer development. I has sucessfully developed.
+
+
+<p align="center">
+<video src="19-1.mp4" controls width="700"></video>
+<p align="center">
+Video 01 Completion of first two Layers
+</p>
+
+<p align="center">
+  <img src="20.jpeg" alt="Robot simulation" width="500">
+</p>
+<p align="center">
+Figure 19 Completion of second Layer
+</p>
+
+
+## 2026-10-08  Generate Coordinates for all layers
+
+I generated coordinated for all place positionsand orientations using ACAD.
+
+<p align="center">
+  <img src="22.png" alt="Robot simulation" width="500">
+</p>
+<p align="center">
+Figure 20 ACAD sketch
+</p>
+
+
+<p align="center">
+  <img src="21.png" alt="Robot simulation" width="500">
+</p>
+<p align="center">
+Figure 20 All coordinates for 10 layers
+</p>
+
+
+## 2026-10-09  Update the sequence in Dobot MG400
+
+I entered the generated coordinates to DobotStudio for the MG400. Then, I updated the robot sequence and tested the structure layer by layer.
+
+Finally, I successfully developed a five-layer spiral tower. Each layer was rotated by 5 degrees in the positive Z direction to create the spiral shape.
+
+<p align="center">
+  <img src="24.jpeg" alt="Robot simulation" width="500">
+</p>
+<p align="center">
+Figure 21 Final Developed spiral structure 
+</p>
+
+
+<p align="center">
+  <img src="25.jpeg" alt="Robot simulation" width="500">
+</p>
+<p align="center">
+Figure 22 Final Developed spiral structure 
+</p>
+
+
+<p align="center">
+  <img src="26.jpeg" alt="Robot simulation" width="500">
+</p>
+<p align="center">
+Figure 23 Final Developed spiral structure 
+</p>
+
+
+
+
+### Challenges
+
+It took quite a long time to develop the five layers. If I increased the robot speed, the plastic strips could slip and was not  placed in the exact positions. Therefore, I had to position each strip carefully, one by one, to maintain the shape and alignment of the structure.
+
+
+I stopped the development at the fifth layer because of the limited time available. However, more layers can be added similaly with stable.
+
+Another challenge was that I had not marked the centre of each strip. When I defined the pickup coordinates, the pickup position was not properly aligned with the centre of the strip. As a result, some strips were lightly shifted from their intended positions when building the layers. 
+
+To improve this, I should mark the centre of each strip and define the exact storage positions. This would help the robot pick up the strips consistently and place them more accurately.
+
+
+There were also many coordinates to enter into DobotStudio. I tried to export the coordinates, but I could not succeed. Therefore, I had to enter the coordinates manually, one by one. This took additional time. In the future, I should find a more efficient way to transfer the coordinates to the robot.
+
+### Prictical situations 
+
+This project demonstrates how a robot can pick, rotate, and place objects at different angles to build a structure. The same concept can be adapted to different practical applications by changing the robot program, the object positions, and the gripper.
+
+1. Packing
+2. Supermarket goods arrangement
+3. Wood Stacking
+4. Assembly operation
+
+In this project, I used a vacuum suction gripper to pick up the strips. In practical applications, different grippers can be selected depending on the shape, size, weight, and material of the objects.
+
+Finally, I could understand the importance of coordinates defining, correct alignment, robot speed, careful placementsin robot operation system.
+
+
+## Reference
+
