@@ -320,6 +320,11 @@ Figure 22 Final Developed spiral structure
 Figure 23 Final Developed spiral structure 
 </p>
 
+<p align="center">
+<video src="23_Final_Demo.mp4" controls width="700"></video>
+<p align="center">
+Video 02 Final Robot Demostration
+</p>
 
 
 
@@ -351,5 +356,128 @@ In this project, I used a vacuum suction gripper to pick up the strips. In pract
 Finally, I could understand the importance of coordinates defining, correct alignment, robot speed, careful placementsin robot operation system.
 
 
+## 2026-10-17  Simulation with Robodk
+
+### Pick and Place Location Setup and Robot Programming
+
+I had already completed the pick (stacking) location arrangement. Then, I arranged the place locations using Kapla wood blocks according to my design. First, I identified the known coordinates and dimensions of a Kapla wood block. Then, I manually calculated the other placement coordinates based on my design.
+
+After that, I defined the pick and place locations, as well as the approach locations for picking and placing the wooden blocks.
+
+First, I learned about the coordinate systems, including the suction cup coordinates relative to the robot flange, the reference frame relative to the robot base, and the tool frame relative to the reference frame. I also learned about the positive and negative directions of the X, Y, and Z axes. This knowledge helped me to calculate and define the coordinates more easily.
+
+
+Challenges : When I entered the manually calculated coordinates into the robot and tried to move the robot arm to the pick and place locations, I found that some locations were outside the robot's reachable range. Therefore, I checked the robot's working range again and adjusted the pick and place locations to make sure the robot could reach them.
+
+
+Then, I created the robot programme and named it FantasticFactory. I defined all the movements as linear movements to provide controlled and predictable paths between the pick and place locations.
+
+I also carefully checked the rotation angles of the wooden blocks because each block needed to be placed at a different angle to create my planned structure.
+
+Finally, I created the complete movement sequence and ran the programme. The programme ran successfully, and the robot completed the movements without any collisions.
+
+
+<p align="center">
+  <img src="27.png" alt="Robot simulation" width="500">
+</p>
+<p align="center">
+Figure 24 Defined pick and place locations and Movements 
+</p>
+
+
+<p align="center">
+  <img src="28.png" alt="Robot simulation" width="500">
+</p>
+<p align="center">
+Figure 25 Defined pick and place locations and Movements 
+</p>
+
+
+<p align="center">
+  <img src="29.png" alt="Robot simulation" width="500">
+</p>
+<p align="center">
+Figure 26 Defined pick and place locations and Movements 
+</p>
+
+
+<p align="center">
+  <img src="30.png" alt="Robot simulation" width="500">
+</p>
+<p align="center">
+Figure 27 Defined pick and place locations and Movements 
+</p>
+
+
+<p align="center">
+<video src="31_simulation.mp4" controls width="700"></video>
+<p align="center">
+Video 02 Positions for Pick and Place Simulation
+</p>
+
+
+## 2026-10-18  Update Simulation
+
+### Adding Second layer and Robot Programming
+
+I created the wooden blocks for the second layer by copying and pasting the blocks from the first layer. Then, I adjusted their positions to build the second layer. After that, I defined the pick and place locations for both the first and second layers.
+
+<p align="center">
+  <img src="32.png" alt="Robot simulation" width="500">
+</p>
+<p align="center">
+Figure 28 Wooden blocks stack location for 2 layers
+</p>
+
+
+Then, I carefully created the sequence to build the tower layer by layer. I added the Attach instruction at the pick locations to attach the wooden blocks to the gripper and the Detach instruction at the place locations to release the blocks.
+
+
+<p align="center">
+  <img src="36.png" alt="Robot simulation" width="500">
+</p>
+<p align="center">
+Figure 29 Added the Attach and Detach sequence
+</p>
+
+Then, I ran the programme, and it executed successfully. The robot completed the sequence and built the tower as planned.
+
+<p align="center">
+<video src="37_Final_Simulation.mp4" controls width="700"></video>
+<p align="center">
+Video 03 Final Simulation
+</p>
+
+
+<p align="center">
+  <img src="35.png" alt="Robot simulation" width="500">
+</p>
+<p align="center">
+Figure 30 Completed Two layers
+</p>
+
+
+<p align="center">
+  <img src="34.png" alt="Robot simulation" width="500">
+</p>
+<p align="center">
+Figure 31 Completed Two layers
+</p>
+
+
+<p align="center">
+  <img src="33.png" alt="Robot simulation" width="500">
+</p>
+<p align="center">
+Figure 32 Completed Two layers
+</p>
+
+
+Finally, I gained some knowledge about how to simulate a robotic task, perform pick-and-place operations, and work with a real robot. I also learned about robot safety, network setup, and how to set up the robot before starting the work.
+
+Normally, the process should start with the simulation. After testing the simulation, the programme can be generated and transferred to the real robot for operation. However, I could not generate and transfer the programme because I was using a limited version of RoboDK. Another challenge was the limited time available for the lab sessions. Therefore, I completed the lab work first and then continued with the simulation.
+
+
 ## Reference
+Robodk Videos(https://www.youtube.com/@RoboDK3D)
 
